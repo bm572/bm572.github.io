@@ -1,0 +1,38 @@
+
+    /* ---------------------------------------
+    ##### - PLACE YOUR CUSTOM CSS HERE - #####
+    --------------------------------------- */
+
+.fcc{
+    font-size: 10px;
+}
+
+#intro{
+    font-weight: lighter;
+    color: black;
+    font-style: normal;
+}
+
+.side-menu {
+    font-size: 30px;
+    font-style: normal;
+    font-weight: lighter;
+    color: black;
+
+}
+
+
+.more-work{
+    font-size: 10px;
+    font-style: bold;
+    font-style: underline;
+}
+
+
+
+
+.code-img {
+size: 5px;
+}
+
+
