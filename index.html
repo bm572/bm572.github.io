@@ -1,162 +1,577 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Brittney Matthew </title>
- 
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/apple-touch-icon.png"> 
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/templatemo-style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title> Project Mgmt - Brittney M Portfolio</title>
+    <style>
+     
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: #fff;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000; /* Ensure header stays on top */
+        }
 
-  <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABHiHX/Xuex/1bdqf9Cs4n/IXBS/0IgT2hvLorODEcr/yWiaf9A5qD/Sdqf/ydLP6YAAAAAAAAAAAAAAAAAAAAAO516/0epiP9m3Kz/OoRm/5xI3/+8afT/t1z1/7Fa7/9rLsb/Vdqh/0TWm/8gTjqvAAAAAAAAAAAAAAAAAAAAACprVv9a3Kj/V76V/2o6y/+sc/T/vID8/7N3/P+0efr/bjvX/5lH0v+NN87/AAAAAAAAAAAAAAAAAAAAAAAAAACAmY0FHUE2/5xJ2P+LQtP/aULn/4BU+/98Uvz/Xzzx/1czzP+dVu3/uXjz/5ZW2/8AAAAAAAAAAAAAAAAAAAAAAAAAAJ5j5v+0dPf/hkvt/zshx/88Jun/NiHu/zIf3f9ZO+j/jVr3/7mH/f+NWO7/NiFjVwAAAAAAAAAAAAAAAEEmk+OcdPL/m2P6/31V+/87KOr/FA20/xANwf8TDaz/Pinv/3pN+/+lbfz/a0Dk/1gyrv4AAAAAAAAAAAAAAABDJaL8nWjz/5tn/P9jPvf/LR3q/w0Krv8NBWr/DAmb/ygX2f9cMu3/h0by/3xA5v9GIpPpAAAAAAAAAAAAAAAAk4ioLopK5/+QTfL/USvh/ygXz/8NCI7/GAy//xQNu/8wGsz/PRq//1wnxv9fKL//AAAAAAAAAAAAAAAAAAAAAAAAAABZJbb/XijA/1oy1v9OM+n/M6Te/xggw/8uH+X/YD/4/5Bb9/+cYe//aDfG/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGg93P9jQdj/CSJx/ytn6v9LSef/UDbr/4JX/P+YZfv/mWP3/31J3P8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB+TOH/o273/wcJwP+MVfr/YDnj/2g95v+HUPf/m1/2/3lJ5P9XLq3/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOxxrr2o03f+MR/H/h0bx/2kz2P9UJ8n/k0rs/5ZN6P9UJ7H/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3HlZTby3N/3Yx0P9QIaD+AAAAAE4fjPEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAMEDAADAAwAAwAcAAOADAADgAwAAwAEAAMABAADgAwAA4AMAAPADAADwAwAA8AcAAPxfAAD//wAA//8AAA==" rel="icon" type="image/x-icon" />
+        .title {
+            margin: 0;
+            font-size: 2em;
+            transition: color 0.3s;
+        }
 
-<style>
+        .section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
 
-#project-post {
-  width: 490px;
-  border: 2px solid black;
-  padding: 20px;
-  margin: auto;
-  height: 300px;
-}
+        .content {
+            text-align: center;
+        }
 
-.project-links{
-  text-decoration: none;
-  text-align:center;
-  text-transform: capitalize;
+        h2 {
+            font-size: 2.5em;
+            margin: 0;
+            font-family: Nimbus;
+        }
 
-}
+        p {
+            font-size: 1.2em;
+        }
 
-.fa fa-linkedin{
-  width: 200px;
-}
+        /* Smooth scrolling for the page */
+        html {
+            scroll-behavior: smooth;
+        } 
 
-.fa fa-github{
-  width: 200px;
-}
+        /* Example Hover Effect */
+        .pin {
+            position: relative;
+            transition: transform 0.3s ease;
+        }
 
-.column{
-  text-decoration: none;
-}
+        .pin:hover {
+            transform: scale(1.05);
+        }
 
-.here { color:hsl(216, 99%, 59%);
-}; 
-</style> 
+        .pin-info {
+            display: none;
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 10px;
+        }
 
-</head>
+        .pin:hover .pin-info {
+            display: block;
+        }
 
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
 
+        .grid-item {
+            background-color: #eee;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
 
-<body>
-  <div class="tm-page-container mx-auto">
-    <header class="tm-header text-center">
-      <footer></footer>
- 
-      <h4 class="">Brittney M</h4>
-<!--- skills icons-->
+        .h2 {
+            font-size: 2em;
+            position: relative;
+            text-align: center; 
+        }
 
+        .h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px; /* Adjust based on your design */
+            width: 100%; 
+            height: 10px; /* Adjust to the height of the line */
+            background-image: url('wave.svg');
+            background-repeat: repeat-x;
+            background-size: cover;
+        }
 
-        <div class="row">
-          <div class="column">
-          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40"viewBox="0 0 48 48" style=" fill:#000000;"><path fill="#e64a19" d="M26,17h-8c-3.866,0-7-3.134-7-7v0c0-3.866,3.134-7,7-7h8V17z"></path><path fill="#7c4dff" d="M25,31h-7c-3.866,0-7-3.134-7-7v0c0-3.866,3.134-7,7-7h7V31z"></path><path fill="#66bb6a" d="M18,45L18,45c-3.866,0-7-3.134-7-7v0c0-3.866,3.134-7,7-7h7v7C25,41.866,21.866,45,18,45z"></path><path fill="#ff7043" d="M32,17h-7V3h7c3.866,0,7,3.134,7,7v0C39,13.866,35.866,17,32,17z"></path><circle cx="32" cy="24" r="7" fill="#29b6f6"></circle></svg>
-            </div>
-            <div class="column">
-          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40"viewBox="0 0 48 48" style=" fill:#000000;"><path fill="#0277BD" d="M24.047,5c-1.555,0.005-2.633,0.142-3.936,0.367c-3.848,0.67-4.549,2.077-4.549,4.67V14h9v2H15.22h-4.35c-2.636,0-4.943,1.242-5.674,4.219c-0.826,3.417-0.863,5.557,0,9.125C5.851,32.005,7.294,34,9.931,34h3.632v-5.104c0-2.966,2.686-5.896,5.764-5.896h7.236c2.523,0,5-1.862,5-4.377v-8.586c0-2.439-1.759-4.263-4.218-4.672C27.406,5.359,25.589,4.994,24.047,5z M19.063,9c0.821,0,1.5,0.677,1.5,1.502c0,0.833-0.679,1.498-1.5,1.498c-0.837,0-1.5-0.664-1.5-1.498C17.563,9.68,18.226,9,19.063,9z"></path><path fill="#FFC107" d="M23.078,43c1.555-0.005,2.633-0.142,3.936-0.367c3.848-0.67,4.549-2.077,4.549-4.67V34h-9v-2h9.343h4.35c2.636,0,4.943-1.242,5.674-4.219c0.826-3.417,0.863-5.557,0-9.125C41.274,15.995,39.831,14,37.194,14h-3.632v5.104c0,2.966-2.686,5.896-5.764,5.896h-7.236c-2.523,0-5,1.862-5,4.377v8.586c0,2.439,1.759,4.263,4.218,4.672C19.719,42.641,21.536,43.006,23.078,43z M28.063,39c-0.821,0-1.5-0.677-1.5-1.502c0-0.833,0.679-1.498,1.5-1.498c0.837,0,1.5,0.664,1.5,1.498C29.563,38.32,28.899,39,28.063,39z"></path></svg>
-          </div>
-          <div class="column">
-          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"width="40"viewBox="0 0 48 48"style=" fill:#000000;"><path fill="#ffd600" d="M6,42V6h36v36H6z"></path><path fill="#000001" d="M29.538 32.947c.692 1.124 1.444 2.201 3.037 2.201 1.338 0 2.04-.665 2.04-1.585 0-1.101-.726-1.492-2.198-2.133l-.807-.344c-2.329-.988-3.878-2.226-3.878-4.841 0-2.41 1.845-4.244 4.728-4.244 2.053 0 3.528.711 4.592 2.573l-2.514 1.607c-.553-.988-1.151-1.377-2.078-1.377-.946 0-1.545.597-1.545 1.377 0 .964.6 1.354 1.985 1.951l.807.344C36.452 29.645 38 30.839 38 33.523 38 36.415 35.716 38 32.65 38c-2.999 0-4.702-1.505-5.65-3.368L29.538 32.947zM17.952 33.029c.506.906 1.275 1.603 2.381 1.603 1.058 0 1.667-.418 1.667-2.043V22h3.333v11.101c0 3.367-1.953 4.899-4.805 4.899-2.577 0-4.437-1.746-5.195-3.368L17.952 33.029z"></path></svg>
-          </div>
-          <div class="column">
-          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40"viewBox="0 0 48 48" style=" fill:#000000;"><path fill="#E65100" d="M41,5H7l3,34l14,4l14-4L41,5L41,5z"></path><path fill="#FF6D00" d="M24 8L24 39.9 35.2 36.7 37.7 8z"></path><path fill="#FFF" d="M24,25v-4h8.6l-0.7,11.5L24,35.1v-4.2l4.1-1.4l0.3-4.5H24z M32.9,17l0.3-4H24v4H32.9z"></path><path fill="#EEE" d="M24,30.9v4.2l-7.9-2.6L15.7,27h4l0.2,2.5L24,30.9z M19.1,17H24v-4h-9.1l0.7,12H24v-4h-4.6L19.1,17z"></path></svg>
-          </div>
-          <div class="column">
-          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" viewBox="0 0 48 48" style=" fill:#000000;"><path fill="#0277BD" d="M41,5H7l3,34l14,4l14-4L41,5L41,5z"></path><path fill="#039BE5" d="M24 8L24 39.9 35.2 36.7 37.7 8z"></path><path fill="#FFF" d="M33.1 13L24 13 24 17 28.9 17 28.6 21 24 21 24 25 28.4 25 28.1 29.5 24 30.9 24 35.1 31.9 32.5 32.6 21 32.6 21z"></path><path fill="#EEE" d="M24,13v4h-8.9l-0.3-4H24z M19.4,21l0.2,4H24v-4H19.4z M19.8,27h-4l0.3,5.5l7.9,2.6v-4.2l-4.1-1.4L19.8,27z"></path></svg> 
-          </div>
-          </div> 
+        ul, li {
+            list-style: none;
+            padding: 0;
+        }
 
-          <div class="topnav">
-            <a href="index.html"><span class="here">Projects</span></a> 
-            <space>
-            <a href="/brittney_matthew_resume.pdf" target="_blank">Resume</a> </space> <space>
-            <a href="mailto:bm572@rutgers.edu">Contact</a></space>
-          </div>
+        .sessions {
+            margin-top: 2rem;
+            border-radius: 12px;
+            position: relative;
+        }
 
-      </header> 
+        .section {
+            padding: 2rem;
+            height: 100vh; /* Full viewport height for each section */
+            transition: background-color 0.5s ease;
 
+        }
 
-      <h1> 
-        <span> Hi, I'm Brittney M!</span>
-      </h1>
-
-
-          <img src="lagom-graphic-designer-creating-artwork.png"alt="Image" class="img-fluid tm-img"/>
-        </figure>
-   
-        <br> 
-          <p class="about-section">
-          I'm a self-proclaimed <span style="color:hsl(216, 92%, 66%);">creative</span> passionate about <span style="color:hsl(216, 92%, 66%)"> tech, design,</span> and <span style="color: hsl(216, 92%, 66%);">products.</span> 
-          I'm interested in the  <span style="color:hsl(216, 92%, 66%);">intersection</span> of <span style="color:hsl(216, 92%, 66%);"> design, tech and user experience </span>
-            as I'm hoping to gain experience in software engineering, product management and UX design. 
-           <br> 
-           <br> Currently, I'm a senior <b>studying</b> in a 5-year program for my <b>bachelors</b> of arts in <b>Information Technology & Design</b> at <a href = "/https://comminfo.rutgers.edu/undergraduate-programs/information-technology-and-informatics-major">Rutgers University.</href></a>
-  
-           <br>
-          
-
-   
-<section class="project py-5" id="project">
-  <div class="container">
-             <div class="row">
-            <div class="col-lg-11 text-center mx-auto col-12">
-                <div class="col-lg-8 mx-auto">
-                  <h2> Projects</h2>
-                </div>
-
-                <br>
-                   <!--- INSERT INSANT CUP project   instantcup.html-->
-           
-
-                   <h4><a class="project-links" href="/scarletrides.html" target="_blank"> Scarlet Ride Sharing Application (Product Management)</a></h4>
-
-                  <br>
-
-                  <h4><a class="project-links" href="/instantcup.html" target="_blank">UX Design: Instant Cup (Design & Protoype)</a></h4>
-                 
-                  <!-- <div id="project-post" img src="mega-creator.png"/>
-                  </div> -->
-         <br> 
-      
-         <h4><a class="project-links" href="https://github.com/bm572/New-York-Times-API-/blob/7a1466475892a39a069f77045d47d4f96c3fc071/NYTAPI.py" target="_blank"> Python: New York Times Article's API Research</a></h4>
-         <br> 
-        
-        <h4><a class="project-links" href="https://github.com/bm572/Mean-Variance-Standard-Deviation-Calculator/blob/9f342673ed4db37b67fa6d5e7ed3d673c8ba4688/main.py" target="_blank"> Python: Mean Variance Standard Deviation Calculator</a></h4>
-       
-      <br>  
-    <h4><a class="project-links" href="/best4years.html" target="_blank"> Best 4 Years Project (Project Management)</a></h4> 
-    <br>
-
-   
     
-  <!---INSERT project-->
 
-  <!----  <br>  
-    <h4><a class="project-links" href=" LINK " target="_blank"> NAME </a></h4> -->
+/* Apply the font to elements */
+body {
+    
+    font-family: '21 Cent Condensed', sans-serif;
+} 
+
+h2 {
+    font-family: 'Nimbus Sans L', sans-serif; 
+    font-size: 50px; 
+}
+ 
+
+@font-face {
+    font-family: '21 Cent Condensed';
+    src: url('fonts/21-cent-condensed-ultralight-italic.woff2') format('woff2'),
+         url('fonts/21-cent-condensed-ultralight-italic.woff') format('woff'),
+         url('fonts/21-cent-condensed-ultralight-italic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'Nimbus Sans L';
+    src: url('fonts/nimbus-sans-l-light.woff2') format('woff2'),
+         url('fonts/nimbus-sans-l-light.woff') format('woff'),
+         url('fonts/nimbus-sans-l-light.ttf') format('truetype');
+    font-weight: 300; /* Adjust based on the font weight */
+    font-style: normal;
+}
+ 
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #33865ccb;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #d4d1d1;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
 
 
-<br>
+ 
+.about-button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: grabbing;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #000000;
+  background-color: #e4c952;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 7px #bfbfbf;
+}
 
-<a class='fa fa-linkedin' target="_blank" href="https://www.linkedin.com/in/bmatthew/"></a>
-<a class='fa fa-github' target="_blank" href="https://github.com/bm572/" ></a>
+.button:hover {background-color: #149318}
 
-  
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
 
 
+
+
+.last-section {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+
+
+/* Footer styles */
+.footer {
+    position: fixed;
+    bottom: -100%; /* Hide footer initially */
+    left: 0;
+    width: 100%;
+    background-color: #7f56a8dc;
+    color: #450f6c;
+    text-align: center;
+    padding: 20px;
+    transition: bottom 0.5s ease;
+    z-index: 1000;
+}
+
+.footer-content {
+    animation: pop-in 1s ease-out;
+}
+
+.footer h2 {
+    margin: 0;
+}
+
+.footer-icons {
+    margin-top: 20px;
+}
+
+.footer-icon {
+    display: inline-block;
+    margin: 0 15px;
+    font-size: 2.5em; /* Large icons */
+    color: #fff;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.footer-icon:hover {
+    color: #ddd; /* Light color on hover */
+}
+
+/* Pop-in animation */
+@keyframes pop-in {
+    0% { transform: translateY(30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* 
+//squiggly text for brittney  */
+#squiggly {
+    position: relative;
+    display: inline-block;
+    margin: 1px; /* Adjust spacing as needed */ 
+    text-decoration-line: underline; 
+    text-decoration-color: #ff1717; /* Color of the squiggly line */
+    text-decoration-style: wavy; /* Makes the line squiggly */
+    text-decoration-thickness: 1px; /* Thickness of the line */
+}
+
+
+
+
+/* netflix inspo - carsouel?? */
+carousel-one {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 0;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    position: relative;
+    min-width: 250px; /* Adjust based on your design */
+    margin-right: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-item img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.item-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    transform: translateY(100%);
+}
+
+.carousel-item:hover img {
+    transform: scale(1.1);
+}
+
+.carousel-item:hover .item-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev-button {
+    left: 0;
+}
+
+.next-button {
+    right: 0;
+}
+
+    .gallery-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        max-width: 1200px;
+    }
+
+    .gallery-item {
+        flex: 1 1 calc(25% - 20px); /* Adjust for 4 images per row */
+        box-sizing: border-box;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    @media (max-width: 768px) {
+        .gallery-item {
+            flex: 1 1 calc(50% - 20px); /* Adjust for 2 images per row on smaller screens */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .gallery-item {
+            flex: 1 1 100%; /* Full-width images on very small screens */
+        }
+    }
+
+
+    .social-container {
+        display: flex;
+        align-items: center;
+        gap: 10px; /* Space between span and icons */
+    }
+
+    .social-icons a {
+        display: inline-block;
+    }
+
+    .social-icons img {
+        display: block;
+    }
+
+</style>
+</head>
+<body>
+    <header>
+        <h1 class="title">Brittney M</h1>
+ 
+       
+
+
+        <!-- Font Awesome CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+    </header>
+
+    <section id="section1" class="section" style="background-color: #ECDD7B;">
+        <div class="content">
+            <h2 style="font-size: 90px"  id="intro-name">Hi, I'm Brittney! </h2> 
+            <h3 style="font-size: 60px;">and I'm </h3>
+            <p id="demo1" class="typing-effect" style="font-size: 45px; color: #000000; text-shadow: 2px 2px 4px rgb(255, 255, 255);"></p>
+            <a href="#section2"  class="button"> my 9am-5pm life</a>
+            <a href="#section3"  class="button"> my 5pm-9pm life</a> 
+        </div>
+        
+    </section>
+    <section id="section2" class="section" style="background-color: #f5bf61;">
+        <div class="content">
+            <h2 style="font-size: 90px;"> got work?</h2>
+            <h3 style="font-size: 25px; color: #ffffff; text-shadow: 2px 2px 4px #bb4430; ">
+                Previous Undergrad & Grad Projects 
+            </h3>
+    
+            <ul>
+                <li>
+                    <a target="_blank" href="https://docs.google.com/document/d/1RP-19ELDFAME23681FBHMGp6V_CuBmq6mZTMk7oRPzM/pub" style="font-size: 25px; color: #000000;">
+                        New York Times API Project (Data - Python)
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://www.canva.com/design/DAFSvCVAfjU/16m5B6lAhsSp8Ii0sMyPWQ/view?utm_content=DAFSvCVAfjU&utm_campaign=designshare&utm_medium=link&utm_source=editor" style="font-size: 25px; color: #000000;">
+                        Scarlet Rides Share App (Product Management fellowship)
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://sites.google.com/scarletmail.rutgers.edu/iv-final-project/home" style="font-size: 25px; color: #000000;">
+                        Spotify Musical Data (Data Science)
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://www.figma.com/proto/dWB7B5DECFZ4yVIM8OdaW9/Best-4-Years-Website?node-id=326-10488&starting-point-node-id=326%3A10488&t=6JLdKIwVJk7CynHn-1" style="font-size: 25px; color: #000000;">
+                        Best 4 Years (Project Management)
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://www.figma.com/proto/FMfkuUkXcWhpbcCGzbqPSX/P7-Revision-%26-P9-Hi-FI-Protoype?node-id=111-7142&starting-point-node-id=111%3A7142&t=t6TaQARYpcDlVRgT-1" style="font-size: 25px; color: #000000;">
+                        Taskholic (UX/UI Design)
+                    </a>
+                </li>
+            </ul>
+    
+            <!-- Text without hyperlinks -->
+            <h3 style="font-size: 25px; color: #ffffff; text-shadow: 2px 2px 4px #bb4430;">
+                Post-Grad Work Coming Soon...
+            </h3>
+    
+            <ul>
+                <li style="font-size: 25px; color: #000000; list-style: none;">
+                    Internship 2023 - Progressive Insurance - IT PM Intern to IT Interns & PRG's Commercial Line's Project
+                </li>
+            </ul>
+    
+            <a href="#section3" class="about-button">
+                now that's over.. let's talk <i>real</i> business!
+            </a>
+        </div>
+    </section>
+
+    <section id="section3" class="section" style="background-color: #538e17c3;">
+        <div class="content">
+            <h2 style="font-style: italic; font-size:90px"> Who is </h2> 
+            <h2 style="font-size:90px" id="squiggly"> Brittney?</h2>  
+            <p style="font-weight: light; font-size: 30px;">well, if you must ask...</p>
+            <p style="font-weight: light; font-size: 30px;">I currently hold these qualifications below </p>
+            
+                <li>
+                    <h2> BA - Information Technology & Art (Graphic Design) -- Rutgers University, 2023 </h2>
+                </li>
+
+                <li>
+                    <h2> MI - Information Science-- Rutgers University, 2024 </h2>
+                </li>
+            
+            <a href="#section4"  class="about-button"> Oh! You meant outside of school !?!? </a>
+ 
+    </section>
+
+
+
+    <section id="section4" class="section" style="background-color: #bb4430;">
+        <div class="content">
+            <h2 style="font-size: 90px;">life outside the office</h2>
+            <br>
+            <p style="font-size: 30px;">by morning, I'm Brittney, the project manager; managing the execution of a project.</p>
+            <p style="font-size: 30px;">by day (and night), I am ... </p>
+            <p id="demo2" class="typing-effect" style="font-size: 35px; color: #f5bf61; text-shadow: 2px 2px 4px rgb(34, 7, 7);"></p>
+        </div>
+    
+        <!-- Gallery moved inside section4 -->
+        <div class="gallery-container">
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="/102_0081.JPG" alt="Cinque Terre">
+                </div>
+                <div class="gallery-item">
+                    <img src="/102_0147.JPG" alt="Forest">
+                </div>
+                <div class="gallery-item">
+                    <img src="/102_0103 2.JPG" alt="Forest">
+                </div>
+                <div class="gallery-item">
+                    <img src="/101_0013.JPG" alt="Forest">
+                </div>
+                <div class="gallery-item">
+                    <img src="/102_0098.JPG" alt="Forest">
+                </div>
+                <div class="gallery-item">
+                    <img src="/102_0099.JPG" alt="Forest">
+                </div>
+                <div class="gallery-item">
+                    <img src="/101_0093.JPG" alt="Northern Lights">
+                </div>
+                <div class="gallery-item">
+                    <img src="/101_0135.JPG" alt="Forest">
+                </div>
+                <div class="gallery-item">
+                    <img src="/IMG_5897.PNG" alt="Forest">
+                </div>
+                <div class="gallery-item">
+                    <img src="/IMG_5898.PNG" alt="Forest">
+                </div>
+                <div class="gallery-item">
+                    <img src="/IMG_6234.JPG" alt="Forest">
+                </div>
+                <div class="gallery-item">
+                    <img src="/IMG_5899.PNG" alt="Forest">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <h1> Don't be shy! <span style="font-weight: normal; font-style: italic;">Let's stay connected!</span></h1>     
+    <div class="social-container">
+    <a style="color:#000000" href="https://linkedin.com/in/bmatthew/" target="_blank" class="footer-icon"><i class="fab fa-linkedin-in"></i></a>
+    <a style="color:#000000" href="mailto:bm572@scarletmail.rutgers.edu" class="footer-icon"><i class="fas fa-envelope"></i></a>
+    <a href="#section1"  class="button"> home </a>
+ </div>
+</div>
+</div>
+
+<h4 style="font-weight: lighter">designed, loved & coded <b> only by brittney m. </b></h4>
+    <script src="script.js"></script>
 </body>
-
 </html>
